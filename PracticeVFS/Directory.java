@@ -16,7 +16,28 @@ public class Directory {
         this.files = new HashMap<>();
     }
 
+    public void addSubdirectory(String name) {
+        if (directories.containsKey(name)) {
+            System.out.println("이미 있음");
+            return;
+        }
+
+        Directory newDirectory = new Directory(name, this);
+        directories.put(name, newDirectory);
+        System.out.println(this +" 디렉토리 아래 "+name+"를 생성합니다.");
+    }
+
     public String getName() {
         return name;
     }
+
+    public Map<String, Directory> getDirectories() {
+        return directories;
+    }
+
+    @Override
+    public String toString() {
+        return (parent == null) ? "/" : parent.getName();
+    }
+
 }

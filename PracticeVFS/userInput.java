@@ -13,7 +13,8 @@ public class userInput {
     }
 
     public List<String> userOrder (){
-        List<String> orders = new ArrayList<String>();
+        System.out.print("my-vfs> ");
+        List<String> orders = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         String order = sc.nextLine();
         Collections.addAll(orders, order.split(" "));
