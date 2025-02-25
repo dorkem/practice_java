@@ -1,6 +1,6 @@
 package java_practice.PracticeVFS;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class userInput {
     public long userInit(){
@@ -10,6 +10,14 @@ public class userInput {
         long sizeByte = parseSize(userSize);
         System.out.println(formatSize(sizeByte)+" 파일 시스템의 초기화를 완료했습니다.");
         return sizeByte;
+    }
+
+    public List<String> userOrder (){
+        List<String> orders = new ArrayList<String>();
+        Scanner sc = new Scanner(System.in);
+        String order = sc.nextLine();
+        Collections.addAll(orders, order.split(" "));
+        return orders;
     }
 
     private static long parseSize(String input) {
