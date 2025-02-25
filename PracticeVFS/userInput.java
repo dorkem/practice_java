@@ -1,14 +1,15 @@
-package java_practice;
+package java_practice.PracticeVFS;
 
 import java.util.Scanner;
 
 public class userInput {
-    public void userInit(){
+    public long userInit(){
         System.out.print("저장된 파일 시스템이 없습니다.\n파일 시스템의 최대 크기를 입력해 주세요.\nmy-vfs> ");
         Scanner sc = new Scanner(System.in);
         String userSize = sc.nextLine();
         long sizeByte = parseSize(userSize);
         System.out.println(formatSize(sizeByte)+" 파일 시스템의 초기화를 완료했습니다.");
+        return sizeByte;
     }
 
     private static long parseSize(String input) {
