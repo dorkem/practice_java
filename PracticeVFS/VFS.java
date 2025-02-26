@@ -105,6 +105,7 @@ public class VFS {
         long filesize = content.getBytes().length;
         if (metadata.remainSize() < filesize){
             System.out.println("파일 저장공간 부족");
+            return;
         }
 
         FileEntry fileEntry = new FileEntry(fileName, content);
@@ -118,6 +119,7 @@ public class VFS {
     public void read(List<String> order){
         if (order.size() > 2){
             System.out.println("입력방식을 맞춰주세요 ex)read /hello/greeting.txt");
+            return;
         }
         String path = order.get(1);
         int lastSlash = path.lastIndexOf('/');
