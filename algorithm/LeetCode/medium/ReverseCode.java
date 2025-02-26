@@ -1,4 +1,4 @@
-package java_practice.algorithm.LeetCode;
+package java_practice.algorithm.LeetCode.medium;
 
 public class ReverseCode {
     class Solution {
