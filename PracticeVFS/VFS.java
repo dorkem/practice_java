@@ -149,6 +149,7 @@ public class VFS {
     public void importFile(List<String> order){
         if (order.size() > 3){
             System.out.println("입력방식을 맞춰주세요 (실제경로에 \\, \"\" 포함가능) ex)import C:/Users/USER/OneDrive/a.txt /users/honux");
+            return;
         }
         String realPath = order.get(1).replace("\\", "/").replace("\"", "");
         String vfsPath = order.get(2);
@@ -186,6 +187,7 @@ public class VFS {
     public void exportFile(List<String> order){
         if (order.size() > 3){
             System.out.println("입력방식을 맞춰주세요 ex)export /hello/greeting.txt /users/honux");
+            return;
         }
         String vfsPath = order.get(1);
         String realPath = order.get(2).replace("\\", "/").replace("\"", "");
