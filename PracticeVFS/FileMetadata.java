@@ -12,11 +12,7 @@ public class FileMetadata {
         return size - usedSize;
     }
 
-    public void updateSize(){
-        usedSize += size;
-    }
-
-    public boolean canStore(long fileSize){
-        return (usedSize + fileSize) <= size;
+    public void updateSize(long filesize){
+        usedSize += filesize;
     }
 }

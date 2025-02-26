@@ -53,7 +53,7 @@ public class userInput {
         return size;
     }
 
-    private static String formatSize(long sizeBytes) {
+    public static String formatSize(long sizeBytes) {
         return (sizeBytes >= 1024L * 1024 * 1024)
             ? (sizeBytes / (1024L * 1024 * 1024)) + " 기가"
             : (sizeBytes / (1024L * 1024)) + " 메가";

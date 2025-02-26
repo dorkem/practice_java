@@ -16,6 +16,10 @@ public class Directory {
         this.files = new HashMap<>();
     }
 
+    public void addFiles(String name, FileEntry file) {
+        this.files.put(name, file);
+    }
+
     public void addSubdirectory(String name) {
         if (directories.containsKey(name)) {
             System.out.println("이미 있음");
@@ -35,9 +39,12 @@ public class Directory {
         return directories;
     }
 
+    public Map<String, FileEntry> getFiles() {
+        return files;
+    }
+
     @Override
     public String toString() {
         return (parent == null) ? "/" : parent.getName();
     }
-
 }
