@@ -35,7 +35,6 @@ public class CalController {
     }
 
     private void MarsDateCal(long earthDate){
-        earthDate = 738858;
         // 연도 계산
         int twoYearCycle = MarsInfo.YEAR * 2 + 1;
         long marsYear = (earthDate / twoYearCycle) * 2;
@@ -56,9 +55,12 @@ public class CalController {
         for (int i = 1; i <= MarsInfo.MONTH; i++) {
             int monthLength = 28;
 
-            // **비윤년일 때 6개월마다 하루씩 빼지만, 윤년이면 전부 28일 유지**
-            if (!isLeapYear && (i % 6 == 0)) {
+            if (i % 6 == 0) {
                 monthLength = 27;
+            }
+
+            if (isLeapYear && i==24){
+                monthLength = 28;
             }
 
             if (calDate + monthLength > remainDate) {
@@ -70,9 +72,8 @@ public class CalController {
 
         int marsDay = remainDate - calDate + 1;
 
-        System.out.println(marsYear + " 화성년 " + marsMonth + "월 " + marsDay + "일");
-
-        printCalendar((int)marsYear, marsMonth, marsDay);
+        System.out.println(marsYear+" 화성년 "+ marsMonth+"월 "+marsDay+"일");
+        printCalendar((int)marsYear, marsMonth, isLeapYear);
     }
 
     private void printResult() throws InterruptedException {
@@ -83,16 +84,27 @@ public class CalController {
         if (earthDate != -1) MarsDateCal(earthDate);
     }
 
-    private void printCalendar(int marsYear, int marsMonth, int marsDay) {
+    private void printCalendar(int marsYear, int marsMonth, boolean isLeapYear) {
         System.out.println();
         System.out.println("     "+ marsYear + "년 " + marsMonth + "월");
         String arr[][] = new String[5][7];
         arr[0] = "Su Lu Ma Me Jo Ve Sa".split(" ");
 
+        int[] days = new int[25];
+        for (int i = 1; i <= 24; i++) {
+            days[i] = 28;
+            if (i % 6 == 0) {
+                days[i] = 27;
+            }
+            if (isLeapYear && i==24){
+                days[i] = 28;
+            }
+        }
+
         int date = 1;
         for (int i = 1; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
-                if (date > marsDay) {
+                if (date > days[marsMonth]) {
                     arr[i][j] = "  ";
                 } else {
                     arr[i][j] = String.format("%2d", date++);
@@ -104,7 +116,7 @@ public class CalController {
             for (int j = 0; j < 7; j++) {
                 System.out.print(arr[i][j] + " ");
             }
-            System.out.println(); // 줄바꿈
+            System.out.println();
         }
 
     }

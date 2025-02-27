@@ -48,7 +48,7 @@ public class ProcessBar {
             String bar = color + "▓".repeat(progress) + RESET;
             String emptyBar = GRAY_TEXT + "░".repeat(barLength - progress) + RESET;
 
-            System.out.printf("\r%s%s %3d%%", bar, emptyBar, percentage);
+            System.out.printf("\r%s%s 화성까지의 여행 %3d%%", bar, emptyBar, percentage);
             System.out.flush();
             Thread.sleep(updateTime);
         }
