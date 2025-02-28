@@ -11,8 +11,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.time.LocalTime;
-import javafx.scene.shape.Rectangle;
-import java.time.Clock;
 import java.util.*;
 
 public class ClockUI {
