@@ -146,29 +146,31 @@ public class ClockUI {
         String sec = "";
         if (second >= 10){
             switch (second / 10){
-                case 1 -> sec += " ";
-                case 2 -> sec += "이";
-                case 3 -> sec += "삼";
-                case 4 -> sec += "사";
-                case 5 -> sec += "오";
+                case 1 -> sec += "  십 ";
+                case 2 -> sec += "이십";
+                case 3 -> sec += "삼십";
+                case 4 -> sec += "사십";
+                case 5 -> sec += "오십";
             }
-            sec+="십";
         }
         sec += "\n";
         switch (second % 10){
-            case 0 -> sec += "정각";
-            case 1 -> sec += "일초";
-            case 2 -> sec += "이초";
-            case 3 -> sec += "삼초";
-            case 4 -> sec += "사초";
-            case 5 -> sec += "오초";
-            case 6 -> sec += "육초";
-            case 7 -> sec += "칠초";
-            case 8 -> sec += "팔초";
-            case 9 -> sec += "구초";
+            case 0 -> sec += "  ";
+            case 1 -> sec += "일";
+            case 2 -> sec += "이";
+            case 3 -> sec += "삼";
+            case 4 -> sec += "사";
+            case 5 -> sec += "오";
+            case 6 -> sec += "육";
+            case 7 -> sec += "칠";
+            case 8 -> sec += "팔";
+            case 9 -> sec += "구";
         }
+        sec+="초";
+        if (second == 0) sec = "정각";
+
         textMap.get("초").get(0).setText(sec);
-        textMap.get("초").get(0).setFont(Font.font(20));
+        textMap.get("초").get(0).setFont(Font.font(18));
         textMap.get("초").get(0).setFill(Color.WHITE);
     }
 
