@@ -42,11 +42,6 @@ public class ClockUI {
     }
 
     private void createClockUI(Stage stage) {
-        Rectangle phoneBody = new Rectangle(300, 600);
-        phoneBody.setArcWidth(40);
-        phoneBody.setArcHeight(40);
-        phoneBody.setFill(Color.BLACK);
-
         Scene scene = new Scene(this.getLayout(), 260, 570);
         for(int i = 0; i < grid.length; i++) {
             for(int j = 0; j < grid[i].length; j++) {
