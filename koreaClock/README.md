@@ -5,6 +5,11 @@
 
 ### 사용한 UI
 - JAVAFX
+  - 버전 : 23.0.2
+  - 자바 버전 : 21.0.5
+  - File → Project Structure → Libraries → + 버튼 클릭 → Java → <다운받은 폴더 경로\lib> → Apply
+  - Run → Edit Configuration → Modify Option → Add VM options → 대괄호 내의 명령어 추가 [ --module-path "yourURL\lib" --add-modules javafx.controls,javafx.fxml ]
+  
 
 ### 어떻게 했게?
 
@@ -90,5 +95,3 @@ stage.show();
 updateClock();
 // 얘 왜 또 썼냐면, 위의 로직이 실행하면 1초뒤에 실행됐기 때문임 -> 스크린 생성되자마자 실행
 ```
-
-#### 딴건 설명할 것 없음 
