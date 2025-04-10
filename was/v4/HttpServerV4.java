@@ -1,4 +1,4 @@
-package java_practice.was.V4;
+package java_practice.was.v4;
 
 import java.io.IOException;
 import java.net.ServerSocket;

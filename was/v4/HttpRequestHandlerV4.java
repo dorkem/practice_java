@@ -1,4 +1,4 @@
-package java_practice.was.V4;
+package java_practice.was.v4;
 
 import java_practice.was.httpserver.HttpRequest;
 import java_practice.was.httpserver.HttpResponse;
